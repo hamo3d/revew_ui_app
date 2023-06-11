@@ -71,6 +71,9 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
       appBar: AppBar(
         title: Text(_bnItem[selected].title),
         backgroundColor: Colors.red,
+        actions: [
+          IconButton(onPressed: ()=>Navigator.pushNamed(context, "/images_screen"), icon: Icon(Icons.image))
+        ],
       ),
       body: _bnItem[selected].widget,
       bottomNavigationBar: Animate(

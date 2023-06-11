@@ -7,6 +7,8 @@ import 'package:revew_ui_app/screen/app/login_screen.dart';
 import 'package:revew_ui_app/screen/app/on_bording.dart';
 import 'package:revew_ui_app/screen/app/setting_ui_screen.dart';
 import 'package:revew_ui_app/screen/app/user_screen.dart';
+import 'package:revew_ui_app/screen/images/images_screen.dart';
+import 'package:revew_ui_app/screen/images/upload_image.dart';
 import 'package:revew_ui_app/screen/launch_screen.dart';
 
 void main() async {
@@ -33,6 +35,8 @@ class MyApp extends StatelessWidget {
         '/nav_screen': (context) => const BottomNavigationScreen(),
         '/setting_screen': (context) => const SettingUiScrren(),
         '/onBoarding_screen': (context) => const OnBoarding(),
+        "/images_screen" : (context) =>  ImagesScreen(),
+        "/upload_screen" : (context) => const UploadImage(),
       },
     );
   }

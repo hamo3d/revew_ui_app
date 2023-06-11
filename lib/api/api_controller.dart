@@ -44,6 +44,7 @@ class ApiController {
     var response = await http.get(uri, headers: {
       HttpHeaders.authorizationHeader:
           SharedPrefController().getValue<String>(PrefKeys.token)!,
+      HttpHeaders.acceptHeader:'application/json'
     });
     print(response.statusCode);
     if(response.statusCode == 200 ||  response.statusCode == 401){
