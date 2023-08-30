@@ -20,7 +20,6 @@ class ImagesApiController {
     request.headers[HttpHeaders.acceptHeader] = "application/json";
     request.headers[HttpHeaders.authorizationHeader] = SharedPrefController().getValue(PrefKeys.token)!;
     var response = await request.send();
-    print(response.statusCode);
     if (response.statusCode == 201) {
       String body = await response.stream.transform(utf8.decoder).first;
       var jsonResponse = jsonDecode(body);

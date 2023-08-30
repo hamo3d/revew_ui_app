@@ -17,16 +17,16 @@ class User extends StatelessWidget {
             itemCount: snapshot.data!.length,
             itemBuilder: (context, index) {
               return ListTile(
-                  leading: CircleAvatar(
-                      radius: 35,
-                      backgroundImage:
-                          NetworkImage(snapshot.data![index].image)),
-                  title: Text(snapshot.data![index].firstName),
-                  subtitle: Text(snapshot.data![index].email),
-                  trailing: const Icon(
-                    Icons.arrow_forward_ios,
-                    size: 18,
-                  ));
+                leading: CircleAvatar(
+                    radius: 35,
+                    backgroundImage: NetworkImage(snapshot.data![index].image)),
+                title: Text(snapshot.data![index].firstName),
+                subtitle: Text(snapshot.data![index].email),
+                trailing: const Icon(
+                  Icons.arrow_forward_ios,
+                  size: 18,
+                ),
+              );
             },
           );
         } else {

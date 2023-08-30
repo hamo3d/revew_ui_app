@@ -15,7 +15,7 @@ class OnBoardingPage extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children:  [
+        children: [
           const CircleAvatar(
             maxRadius: 45,
             backgroundImage: NetworkImage(

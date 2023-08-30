@@ -7,6 +7,7 @@ class SharedPrefController {
   SharedPrefController._();
 
   late SharedPreferences _sharedPreferences;
+
   static SharedPrefController? _instance;
 
   factory SharedPrefController() {

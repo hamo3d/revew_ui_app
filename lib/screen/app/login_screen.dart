@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../api/api_controller.dart';
-import '../../prefs/prefs_controller.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -179,9 +178,9 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void _performLogin() async{
-     if (_checkData()) {
-       await _login();
+  void _performLogin() async {
+    if (_checkData()) {
+      await _login();
     }
   }
 
@@ -212,10 +211,10 @@ class _LoginScreenState extends State<LoginScreen> {
     return false;
   }
 
-  Future<void> _login() async{
-    bool result =  await ApiController().login(_emailTextController.text, _passwordTextController.text);
-    print(result);
-    if(result){
+  Future<void> _login() async {
+    bool result = await ApiController()
+        .login(_emailTextController.text, _passwordTextController.text);
+    if (result) {
       Navigator.pushReplacementNamed(context, '/nav_screen');
     }
   }

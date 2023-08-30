@@ -18,7 +18,6 @@ class ImageGetController extends GetxController {
   Future<bool> upload(String path) async {
     StudentImage? image = await _apiController.upload(path);
     if (image != null) {
-      print("Success");
       images.add(image);
       update();
       return true;

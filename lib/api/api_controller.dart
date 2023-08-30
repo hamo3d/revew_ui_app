@@ -11,13 +11,11 @@ class ApiController {
   Future<List<Users>> getUsers() async {
     Uri uri = Uri.parse(ApiSetting.users);
     var response = await http
-        .get(uri, headers: {HttpHeaders.acceptHeader: "apliction/json"});
+        .get(uri, headers: {HttpHeaders.acceptHeader: "application/json"});
     if (response.statusCode == 200) {
       var jsonResponse = jsonDecode(response.body);
       var dataJsonArray = jsonResponse['data'] as List;
-      return dataJsonArray
-          .map((json) => Users.fromJson(json))
-          .toList();
+      return dataJsonArray.map((json) => Users.fromJson(json)).toList();
     }
 
     return [];
@@ -44,15 +42,12 @@ class ApiController {
     var response = await http.get(uri, headers: {
       HttpHeaders.authorizationHeader:
           SharedPrefController().getValue<String>(PrefKeys.token)!,
-      HttpHeaders.acceptHeader:'application/json'
+      HttpHeaders.acceptHeader: 'application/json'
     });
-    print(response.statusCode);
-    if(response.statusCode == 200 ||  response.statusCode == 401){
-      print(response.statusCode);
+    if (response.statusCode == 200 || response.statusCode == 401) {
       SharedPrefController().clear();
       return true;
     }
-    print(response.statusCode);
     return false;
   }
 }
